@@ -54,8 +54,8 @@ public class PagesRunner {
 	        for (File file : jsonFiles) {
 	            jsonPaths.add(file.getAbsolutePath());
 	        }
-	        Configuration config = new Configuration(new File("target"), "YOUR PROJECT NAME");
-	        config.addClassifications("Environment", System.getProperty("karate.env"));
+	        Configuration config = new Configuration(new File("target"), "IT Automation - Sample Project");
+	        config.addClassifications("Environment", "Test - IT Automation");
 	        ReportBuilder reportBuilder = new ReportBuilder(jsonPaths, config);
 	        reportBuilder.generateReports();
 	    }
