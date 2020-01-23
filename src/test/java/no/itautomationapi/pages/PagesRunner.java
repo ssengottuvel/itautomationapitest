@@ -3,7 +3,6 @@ package no.itautomationapi.pages;
 import com.intuit.karate.KarateOptions;
 import com.intuit.karate.cucumber.CucumberRunner;
 import com.intuit.karate.cucumber.KarateStats;
-import cucumber.api.CucumberOptions;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 import org.apache.commons.io.FileUtils;
@@ -11,7 +10,6 @@ import org.testng.annotations.Test;
  
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
  
@@ -49,7 +47,8 @@ public class PagesRunner {
 	        assertTrue("there are scenario failures", stats.getFailCount() == 0);
 	    }
 	 
-	    private static void generateReport(String karateOutputPath) {
+	    @SuppressWarnings({ "unchecked", "rawtypes" })
+		private static void generateReport(String karateOutputPath) {
 	        Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[] {"json"}, true);
 	        List jsonPaths = new ArrayList(jsonFiles.size());
 	        for (File file : jsonFiles) {
