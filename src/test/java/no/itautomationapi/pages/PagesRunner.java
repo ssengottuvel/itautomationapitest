@@ -25,7 +25,8 @@ import static org.testng.AssertJUnit.assertTrue;
 
 //Parallel Execution
 
-@KarateOptions(tags = { "~@ignore" })
+//@KarateOptions(tags = { "~@ignore" })
+@KarateOptions(tags = { "@tagdemo"})
 public class PagesRunner {
 
 	 @Test
